@@ -51,3 +51,28 @@ console.log("Har jag en type? ", "type" in pokemon, "Det är", pokemon.type);
 console.log(pokemon.color);
 
 
+const personContainer = document.getElementById("person-info");
+const pokemonContainer = document.getElementById("pokemon-info");
+
+personContainer.innerHTML = `
+    <div class="card">
+        <h2>${person.firstName} ${person.lastName}</h2>
+        <p><strong>Yrke:</strong> ${person.occupation}</p>
+        <p><strong>Ålder:</strong> ${person.age} år</p>
+    </div>
+`;
+
+pokemonContainer.innerHTML = `
+    <div class="card">
+        <h2>${pokemon.name} <small>(${pokemon.type})</small></h2>
+        <p>Utvecklas från: <em>${pokemon.evolution.from}</em></p>
+        <p>Personlighet: ${pokemon.personality.join(", ")}</p>
+    </div>
+`;
+
+console.log("--- Automatisk lista på person-data ---");
+
+for (const key in person) {
+  console.log(key, person[key]);
+}
+
